@@ -1,0 +1,111 @@
+
+html,body {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: var(--bodyFont);
+    font-size: 18px;
+    
+}
+
+.skipTo {
+    position: absolute;
+    z-index: 10;
+    transform: translateY(-100px);
+    padding: 0.5rem;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.skipTo:focus {
+    transform: translateY(0px);
+}
+
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accentDark);
+}
+
+.underlineMenu {
+    border-bottom: 2px solid var(--accentDark);
+    color: var(--accentDark);
+}
+
+header {
+    font-size: 20px;
+    text-align: right;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 3.333rem 8.889rem;
+    z-index: 5;
+}
+
+nav, ul {
+    display: flex;
+    list-style: none;
+    text-align: right;
+    gap: 30px;
+
+}
+
+.hero {
+    background-image: url('../assets/Images/Hero_image.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: rgb(144, 144, 144);
+    width: 100vw;
+    height: 80vh;
+    padding: 100px 160px;
+
+}
+
+.paddingLeft110 {
+    padding-left: 110px;
+}
+
+.paddingLeft375 {
+    padding-left: 375px;
+}
+
+.flexArrow {
+    width: 100%;
+    padding-top: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 30px;
+}
+
+.card {
+    display: inline-block;
+    width: 300px;
+    background-color: aquamarine;
+}
+
+.card img {
+    width: 100%;
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 1.111rem;
+    margin-bottom: 1.111rem;
+}
+
+.copyright {
+    font-size: 0.667rem;
+    padding-top: 0.556rem;
+}
+
+

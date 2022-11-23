@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display&display=swap');
+
+:root {
+    --white: #F3F3F3;
+    --black: #2E2E2E;
+    --accentDark: #883D13;
+    --accentLight: #FFA877;
+    --identityFont: 'Playfair Display', serif;
+    --bodyFont: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.heading {
+    font-size: 4.209rem;
+    font-family: var(--identityFont);
+}
+
+.roleText {
+    font-size: 1.333 rem;
+    color: var(--accentDark);
+}
+
+h1 {
+    font-family: var(--identityFont);
+    font-size: 3.157rem;
+}
+
+h2 {
+    font-family: var(--identityFont);
+    font-size: 2.369rem;
+}
+
+h3 {
+    font-family: var(--identityFont);
+    font-size: 1.777rem;
+}
+
+h4 {
+    font-size: 1.333rem;
+}
