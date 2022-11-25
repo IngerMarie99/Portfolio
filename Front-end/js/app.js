@@ -1,4 +1,8 @@
-console.log('js loaded');
+import handleHamburger from './hamburger.js';
+
+
+handleHamburger();
+
 
 const projectID= 'cxhg5yyd';
 
@@ -10,6 +14,7 @@ const query = `
     problemstilling,
     link_prototype,
     "main_image": main_image.asset->url,
+    "second_image":second_image.asset->url,
     image_gallery[]  
     }` 
     ;
@@ -19,41 +24,46 @@ const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/productio
 async function getData() {
     const response = await fetch(url)
     const { result } = await response.json();
-    console.log(result);
 
 
-    const projectsElement = document.querySelector('.projects-wrapper')
+    /*const projectsElement = document.querySelector('.projects-wrapper')*/
+
+    const projectsList = document.querySelector('#main')
 
     result.forEach(project => {
-        const cardElement = document.createElement('a');
-        cardElement.classList.add('card');
-        cardElement.setAttribute('href', `/${project.slug.current}`)
-        
-        const coverElement = document.createElement('img');
-        coverElement.setAttribute('src', project.main_image)
 
-        const titleElement = document.createElement ('h3');
+        
+
+        const projectCard = document.createElement('a');
+        projectCard.classList.add('projectCard');
+        projectCard.setAttribute('src', `/${project.slug.current}`)
+
+        const mainImg = document.createElement('img');
+        mainImg.setAttribute('src', project.main_image);
+
+        const secondImg = document.createElement('img');
+        secondImg.setAttribute('src', project.second_image);
+
+        const titleElement = document.createElement('h2');
         titleElement.textContent = project.project_name;
+
+        projectCard.append(mainImg);
+        projectCard.append(secondImg);
+        projectCard.append(titleElement);
+
         
-        cardElement.append(coverElement);
-        cardElement.append(titleElement);
 
-        console.log(coverElement);
-        console.log(cardElement);
-        console.log(projectsElement);
+        projectsList.append(projectCard);
 
-        projectsElement.append(cardElement);
-        console.log(projectsElement);
+
+        
     });
-    /*
-    const projectList = document.getElementById ('projectList');
-    const ulList = document.createElement('ul');
-    result.forEach(project => {
-        const liElement = document.createElement('li');
-        liElement.textContent = project.project_name
-    });*/
+
 } 
 
 
 
+
+
 getData();
+

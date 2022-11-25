@@ -17,14 +17,27 @@
         </a>
         <header>
             <a href="./index.html" aria-label="Back to homepage"> LOGO </a></span>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="./index.html" class="underlineMenu">Home</a></li>
                     <li><a href="./aboutme.html">About me</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </nav>
+
+
+            
+            <img src="./assets/icons/hamburger.svg" class="mobile-menu-icon" alt="menu">
+
         </header>
+        <nav class="overlay-menu hidden">
+            <ul>
+                <li><a class="close"><img src="./assets/icons/close.svg" alt="close"></a></li>
+                <li><a href="./index.html" class="underlineMenu">Home</a></li>
+                <li><a href="./aboutme.html">About me</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
         <section class="hero">
             <span class="heading">Inger Marie</span> <br>
             <span class="heading paddingLeft110" >Gunderhuset</span> <br>
@@ -36,7 +49,6 @@
                     aria-hidden="true">
                 </a>
             </div>
-
         </section>
 
 
@@ -44,15 +56,6 @@
 
         <main id="main" >
             <h1>Portfolio</h1>
-
-            
-
-
-            <selection class="projects-wrapper">
-            </selection>
-
-
-
         </main>
 
         <footer>

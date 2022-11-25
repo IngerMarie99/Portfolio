@@ -52,6 +52,50 @@ nav, ul {
 
 }
 
+.desktop-nav {
+    display: none;
+}
+
+.overlay-menu {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(208, 208, 208);
+    z-index: 10;
+    position: absolute;
+    top:0;
+    left: 0;
+    ;
+}
+
+.overlay-menu ul {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.111rem;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+@media screen and (min-width: 540px){
+    .desktop-nav{
+        display: block;
+    }  
+
+    .mobile-menu-icon {
+        display: none;
+    }
+    .overlay-menu {
+        display: none;
+    }
+}
+
+
+
 .hero {
     background-image: url('../assets/Images/Hero_image.jpg');
     background-size: cover;
@@ -85,14 +129,67 @@ nav, ul {
     width: 30px;
 }
 
-.card {
-    display: inline-block;
-    width: 300px;
-    background-color: aquamarine;
+
+
+
+
+
+#main h1 {
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
-.card img {
+
+.projectCard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
     width: 100%;
+    min-height: 26rem;
+    gap: 5%;
+    padding: 2rem;
+}
+
+.projectCard img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.projectCard h2 {
+    text-align: left;
+    width: 300px;
+    align-self: center;
+}
+
+.projectCard img:nth-child(2) {
+    align-self: flex-end;
+}
+
+.aboutColumns {
+    padding:3.333rem 8.889rem;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutColumns div  {
+    width: 50%;
+}
+
+.aboutColumns div h1 {
+    padding-bottom: 30px;
+}
+
+
+
+.aboutColumns img {
+    width: 50%;
+    height: 630px;
+    background-color: cornsilk;
 }
 
 

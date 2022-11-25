@@ -38,6 +38,11 @@ export default {
             type:'image',
         },
         {
+            name:'second_image',
+            title:'Second image',
+            type:'image',
+        },
+        {
             name:'image_gallery',
             title:'Image gallery',
             type:'array',
