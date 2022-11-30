@@ -4,8 +4,11 @@ html,body {
     color: var(--black);
     font-family: var(--bodyFont);
     font-size: 18px;
+    scroll-behavior: smooth;
     
 }
+
+
 
 .skipTo {
     position: absolute;
@@ -128,11 +131,24 @@ nav, ul {
 
 .arrow {
     width: 30px;
+    animation-name: bounceArrow;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
-
-
-
+@keyframes bounceArrow {
+    from {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+    
+}
 
 
 #main h1 {
@@ -191,6 +207,14 @@ nav, ul {
     width: 50%;
     height: 630px;
     background-color: cornsilk;
+}
+
+
+.contactSection {
+    margin: 80px 160px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
 }
 
 
