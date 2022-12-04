@@ -16,8 +16,12 @@ const query = `
     "main_image": main_image.asset->url,
     "second_image":second_image.asset->url,
     image_gallery[]  
-    }` 
-    ;
+    }
+    `;
+
+
+  
+  // end of queries
 
 const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/production?query=${query}`;
 
@@ -36,7 +40,7 @@ async function getData() {
 
         const projectCard = document.createElement('a');
         projectCard.classList.add('projectCard');
-        projectCard.setAttribute('src', `/${project.slug.current}`)
+        projectCard.setAttribute('href',`/projects/?${project.slug.current}`);
 
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);

@@ -23,6 +23,18 @@ export default {
             type:'string',
         }, 
         {
+            name:'tidsramme',
+            title:'Tidsramme',
+            type:'string',
+        },
+        
+        {
+            name: 'tools',
+            title: 'Tools',
+            type: 'array',
+            of: [{type: 'reference', to: {type: 'tools'}}],
+          },
+        {
             name:'problemstilling',
             title:'Problemstilling',
             type:'string',
@@ -31,6 +43,16 @@ export default {
             name:'link_prototype',
             title:'Link til prototype',
             type:'url',
+        },
+        {
+            name:'malgruppe',
+            title:'Målgruppe',
+            type:'string',
+        },
+        {
+            name:'leveranse',
+            title:'Leveranse',
+            type:'string',
         },
         {
             name:'main_image',
