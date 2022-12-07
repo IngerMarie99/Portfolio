@@ -18,13 +18,33 @@ export default {
               },
         }, 
         {
+            name:'introduction', 
+            title: 'Introduction', //dette er tittel inne i skjemaet
+            type: 'string' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
+        },
+        {
             name:'tidspunkt',
-            title:'Tidspunkt for prosjekt',
+            title:'When',
+            type:'string',
+        }, 
+        {
+            name:'subject',
+            title:'Subject',
+            type:'string',
+        },
+        {
+            name:'client',
+            title:'Client',
             type:'string',
         }, 
         {
             name:'tidsramme',
-            title:'Tidsramme',
+            title:'Time frame',
+            type:'string',
+        },
+        {
+            name:'group_members',
+            title:'Group members',
             type:'string',
         },
         
@@ -36,8 +56,53 @@ export default {
           },
         {
             name:'problemstilling',
-            title:'Problemstilling',
+            title:'issue',
             type:'string',
+        },
+        {
+            name: 'competetive_analysis',
+            title: 'Competetive Analysis', 
+            type: 'blockContent',
+        },
+        {
+            name:'target_audience',
+            title:'Target audience',
+            type:'blockContent',
+        },
+        {
+            name:'personas',
+            title:'Personas',
+            type:'blockContent',
+        },
+        {
+            name:'site_map',
+            title:'Site map',
+            type:'blockContent',
+        },
+        {
+            name:'project_logo',
+            title:'Logo',
+            type:'blockContent',
+        },
+        {
+            name:'colors',
+            title:'Colors',
+            type:'blockContent',
+        },
+        {
+            name:'icons',
+            title:'Icons',
+            type:'blockContent',
+        },
+        {
+            name:'typography',
+            title:'Typography',
+            type:'blockContent',
+        },
+        {
+            name:'results',
+            title:'Results',
+            type:'blockContent',
         },
         {
             name:'link_prototype',
@@ -47,7 +112,7 @@ export default {
         {
             name:'malgruppe',
             title:'Målgruppe',
-            type:'string',
+            type:'blockContent',
         },
         {
             name:'leveranse',

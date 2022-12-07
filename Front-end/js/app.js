@@ -1,12 +1,15 @@
+import { sanityUrl } from './env.js';
 import handleHamburger from './hamburger.js';
+import readUrl from './utils.js';
 
 
 handleHamburger();
 
+const urlString = readUrl();
 
-const projectID= 'cxhg5yyd';
 
-const query = `
+
+const queryAllProjects = `
 *[_type == "project"]{
     project_name,
     slug,
@@ -19,14 +22,46 @@ const query = `
     }
     `;
 
+const querySingleProject = `
+*[slug.current == "${urlString}"]{
+    project_name,
+    "main_image": main_image.asset->url,
+    tidspunkt,
+    problemstilling,
+    link_prototype,
+    colors,
+    competetive_analysis,
+    group_members,
+    introduction,
+    personas,
+    subject,
+}
+`;
 
-  
+
   // end of queries
 
-const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/production?query=${query}`;
+async function getProject() {
+        const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
+        const { result } = await response.json();
+        console.log(result);
 
-async function getData() {
-    const response = await fetch(url)
+        const titleEL = document.querySelector('.project-title');
+        titleEL.textContent = result[0].project_name;
+
+        const coverProject = document.querySelector('.project-page-top-img');
+        coverProject.setAttribute('src', result[0].main_image);
+    
+}
+
+if (urlString !== undefined) {
+    getProject();
+}
+
+
+
+async function getAllProjects() {
+    const response = await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
     const { result } = await response.json();
 
 
@@ -40,7 +75,7 @@ async function getData() {
 
         const projectCard = document.createElement('a');
         projectCard.classList.add('projectCard');
-        projectCard.setAttribute('href',`/projects/?${project.slug.current}`);
+        projectCard.setAttribute('href', `/projects/?${project.slug.current}`);
 
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);
@@ -68,6 +103,8 @@ async function getData() {
 
 
 
+if (urlString === undefined) { //Forhindrer at den kaller på alle funksjoner overalt, bare på hjem-siden
+    getAllProjects();
+}
 
-getData();
 
