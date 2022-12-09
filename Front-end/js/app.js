@@ -58,15 +58,15 @@ const querySingleProject = `
 
     colors_heading,
     colors_about,
-    colors_image,
+    "colors_image": colors_image.asset->url,
 
     icons_heading,
     icons_about,
-    icons_image,
+    "icons_image": icons_image.asset->url,
 
     typography_heading,
     typography_about,
-    typography_image,
+    "typography_image": typography_image.asset->url,
 
     tools[]->{name, "image": image.asset->url},
 
@@ -107,7 +107,9 @@ async function getProject() {
         logoText.textContent = result[0].logo_text;
 
         const logoFile = document.querySelector('.logo-file');
-        logoFile.setAttribute('src', result[0].logo_file);
+        if(result[0].logo_file) {
+            logoFile.setAttribute('src', result[0].logo_file);
+        }
        
         // COLORS
         const colorsHeading = document.getElementById('colors-heading');
@@ -116,8 +118,11 @@ async function getProject() {
         const colorsAbout = document.getElementById('colors-about');
         colorsAbout.textContent = result[0].colors_about;
 
-        const colorsImage = document.getElementById('colors-image');
-        //colorsImage.setAttribute('src',result[0].colors_image.asset._ref);
+        const colorsImage = document.querySelector('.colors-image');
+        console.log(result[0].colors_image)
+        if(result[0].colors_image) {
+            colorsImage.setAttribute('src',result[0].colors_image);
+        }
 
         // ICONS
         const iconsHeading = document.getElementById('icons-heading');
@@ -126,8 +131,10 @@ async function getProject() {
         const iconsAbout = document.getElementById('icons-about');
         iconsAbout.textContent = result[0].icons_about;
 
-        const iconsImage = document.getElementById('icons-image');
-       // iconsImage.setAttribute('src',result[0].icons_image.asset._ref);
+        const iconsImage = document.querySelector('.icons-image');
+        if(result[0].icons_image) {
+            iconsImage.setAttribute('src',result[0].icons_image);
+        }
                
         // TYPOGRAPHY
         const typographyHeading = document.getElementById('typography-heading');
@@ -136,8 +143,11 @@ async function getProject() {
         const typographyAbout = document.getElementById('typography-about');
         typographyAbout.textContent = result[0].typography_about;
 
-        const typographyImage = document.getElementById('typography-image');
-    // typographyImage.setAttribute('src',result[0].typography_image.asset._ref);
+        const typographyImage = document.querySelector('.typography-image');
+        if(result[0].typography_image !== null) {
+            typographyImage.setAttribute('src',result[0].typography_image);
+        }
+
 
        handleParagraphs(result[0].introduction, 'introduction') 
        handleParagraphs(result[0].brief, 'brief')
