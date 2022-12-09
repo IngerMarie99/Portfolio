@@ -8,7 +8,10 @@ handleHamburger();
 
 const urlString = readUrl();
 
-
+if (window.scrollY) {
+    console.log(window.scroll(0, 0));  // reset the scroll position to the top left of the document.
+  }
+console.log(window.pageYOffset)
 
 const queryAllProjects = `
 *[_type == "project"]{
@@ -18,7 +21,6 @@ const queryAllProjects = `
     "second_image":second_image.asset->url,
     }
     `;
-
 const querySingleProject = `
 *[slug.current == "${urlString}"]{
     project_name,
@@ -46,13 +48,13 @@ const querySingleProject = `
 
     target_audience_heading,
     target_audience,
-    "target_audience_img": target_audience_img.asset->url
+    "target_audience_img": target_audience_img.asset->url,
 
     visual_identity,
     
     logo_heading,
     logo_text,
-    logo_file,
+    "logo_file": logo_file.asset->url,
 
     colors_heading,
     colors_about,
@@ -66,7 +68,7 @@ const querySingleProject = `
     typography_about,
     typography_image,
 
-
+    tools[]->{name, "image": image.asset->url},
 
 }
 `;
@@ -105,7 +107,7 @@ async function getProject() {
         logoText.textContent = result[0].logo_text;
 
         const logoFile = document.querySelector('.logo-file');
-        logoFile.setAttribute('src', result[0].logo_file._ref);
+        logoFile.setAttribute('src', result[0].logo_file);
        
         // COLORS
         const colorsHeading = document.getElementById('colors-heading');
@@ -142,10 +144,26 @@ async function getProject() {
        handleParagraphs(result[0].issue, 'issue')
        handleParagraphs(result[0].visual_identity, 'visual-identity')
 
-
+       plotTools(result[0].tools, 'tools')
        
        
    
+}
+
+function plotTools(tools, container) {
+    const  toolsEl = document.getElementById(container);
+    tools.map(tool => {
+        const toolContainer = document.createElement('div');
+        toolContainer.classList.add('tool');
+        const imgContainer =  document.createElement('img');
+        imgContainer.setAttribute('src', tool.image);
+        imgContainer.setAttribute('alt', `icon of ${tool.name}`)
+        toolContainer.append(imgContainer);
+        const toolTitle = document.createElement('span');
+        toolTitle.textContent = tool.name;
+        toolContainer.append(toolTitle);
+        toolsEl.append(toolContainer);
+    })
 }
 
 if (urlString !== undefined) {

@@ -38,6 +38,7 @@ a:hover {
 }
 
 header {
+    position: relative;
     font-size: 20px;
     text-align: right;
     display: flex;
@@ -49,11 +50,6 @@ header {
 
 @media screen and (max-width: 540px) {
     header {
-        font-size: 20px;
-        text-align: right;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
         margin: 15px 15px 0px 15px;
         z-index: 5;
     }
@@ -124,7 +120,7 @@ nav, ul {
     width: 100vw;
     height: 100vh;
     padding: 100px 160px;
-  /*  transform: translateY(-100px);*/
+   transform: translateY(-100px);
 
 }
 
