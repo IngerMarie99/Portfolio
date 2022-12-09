@@ -11,7 +11,8 @@ import post from './post'
 import author from './author'
 import project from './project'
 import aboutMe from './aboutMe'
-import Tools from './Tools'
+import Tools from './tools'
+import Members from './members'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -28,6 +29,7 @@ export default createSchema({
     project,
     aboutMe,
     Tools,
+    Members,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

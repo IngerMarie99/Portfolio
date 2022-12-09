@@ -20,10 +20,20 @@ export default {
         {
             name:'introduction', 
             title: 'Introduction', //dette er tittel inne i skjemaet
-            type: 'string' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
+            type: 'blockContent' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
         },
         {
-            name:'tidspunkt',
+            name:'brief',
+            title:'Brief',
+            type:'blockContent',
+        },
+        {
+            name:'issue',
+            title:'Issue',
+            type:'blockContent',
+        },
+        {
+            name:'when',
             title:'When',
             type:'string',
         }, 
@@ -38,7 +48,7 @@ export default {
             type:'string',
         }, 
         {
-            name:'tidsramme',
+            name:'time_frame',
             title:'Time frame',
             type:'string',
         },
@@ -54,51 +64,125 @@ export default {
             type: 'array',
             of: [{type: 'reference', to: {type: 'tools'}}],
           },
+        
+        // COMPETITIVE ANALYSIS
         {
-            name:'problemstilling',
-            title:'issue',
+            name: 'competitive_analysis',
+            title: 'Competitive analysis', 
+            type: 'blockContent',
+        },
+
+        // TARGET AUDIENCE
+        {
+            name:'target_audience_heading',
+            title:'Target audience heading',
             type:'string',
         },
         {
-            name: 'competetive_analysis',
-            title: 'Competetive Analysis', 
-            type: 'blockContent',
+            name:'target_audience',
+            title:'Target audience text',
+            type:'string',
         },
         {
-            name:'target_audience',
-            title:'Target audience',
-            type:'blockContent',
+            name:'target_audience_img',
+            title:'Target audience image',
+            type:'image',
         },
+
+         // PERSONAS
         {
             name:'personas',
             title:'Personas',
             type:'blockContent',
         },
+
+        // SITE MAP
         {
             name:'site_map',
             title:'Site map',
             type:'blockContent',
         },
+
+
+        // VISUAL IDENTITY
         {
-            name:'project_logo',
-            title:'Logo',
+            name:'visual_identity',
+            title:'Visual identity',
             type:'blockContent',
         },
+        
+        
+        // PROJECT LOGO
         {
-            name:'colors',
-            title:'Colors',
-            type:'blockContent',
+            name:'logo_heading',
+            title:'Logo heading',
+            type:'string',
         },
         {
-            name:'icons',
-            title:'Icons',
-            type:'blockContent',
+            name:'logo_text',
+            title:'About the logo',
+            type:'string',
         },
         {
-            name:'typography',
-            title:'Typography',
-            type:'blockContent',
+            name:'logo_file',
+            title:'Logo file',
+            type:'image',
         },
+
+
+        // COLORS
+        {
+            name:'colors_heading',
+            title:'Colors heading',
+            type:'string',
+        },
+        {
+            name:'colors_about',
+            title:'About the colors',
+            type:'string',
+        },
+        {
+            name:'colors_image',
+            title:'Colors image',
+            type:'image',
+        },
+
+        // ICONS
+        {
+            name:'icons_heading',
+            title:'Icons heading',
+            type:'string',
+        },
+        {
+            name:'icons_about',
+            title:'About the icons',
+            type:'string',
+        },
+        {
+            name:'icons_image',
+            title:'Icons image',
+            type:'image',
+        },
+
+
+        // TYPOGRAPHY
+        {
+            name:'typography_heading',
+            title:'Typography heading',
+            type:'string',
+        },
+        {
+            name:'typography_about',
+            title:'About the typography',
+            type:'string',
+        },
+        {
+            name:'typography_image',
+            title:'Typography image',
+            type:'image',
+        },
+
+
         {
             name:'results',
             title:'Results',
@@ -109,16 +193,7 @@ export default {
             title:'Link til prototype',
             type:'url',
         },
-        {
-            name:'malgruppe',
-            title:'Målgruppe',
-            type:'blockContent',
-        },
-        {
-            name:'leveranse',
-            title:'Leveranse',
-            type:'string',
-        },
+
         {
             name:'main_image',
             title:'Main image',
@@ -129,12 +204,7 @@ export default {
             title:'Second image',
             type:'image',
         },
-        {
-            name:'image_gallery',
-            title:'Image gallery',
-            type:'array',
-            of: [{type: 'image'}]
-        },
+
         
     ]
 

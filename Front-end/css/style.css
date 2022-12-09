@@ -43,8 +43,20 @@ header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    margin: 3.333rem 8.889rem;
+    margin: 60px 160px 0px 160px;
     z-index: 5;
+}
+
+@media screen and (max-width: 540px) {
+    header {
+        font-size: 20px;
+        text-align: right;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 15px 15px 0px 15px;
+        z-index: 5;
+    }
 }
 
 nav, ul {
@@ -62,13 +74,14 @@ nav, ul {
 .overlay-menu {
     height: 100vh;
     width: 100vw;
-    background-color: var(--whites);
+    background-color: var(--white);
     z-index: 10;
     position: absolute;
     top:0;
     left: 0;
-
 }
+
+
 
 .overlay-menu ul {
     display: flex;
@@ -105,16 +118,16 @@ nav, ul {
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
+    display:flex;
+    flex-flow: column;
     background-color: rgb(144, 144, 144);
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     padding: 100px 160px;
+  /*  transform: translateY(-100px);*/
 
 }
 
-.paddingLeft110 {
-    padding-left: 110px;
-}
 
 .paddingLeft375 {
     padding-left: 375px;
@@ -184,6 +197,34 @@ nav, ul {
     align-self: flex-end;
 }
 
+@media screen and (max-width: 540px) {
+    .projectCard {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        width: 100%;
+        min-height: 26rem;
+        gap: 5%;
+        padding: 2rem;
+    }
+    
+    .projectCard img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+    
+    .projectCard h2 {
+        text-align: left;
+        width: 100px;
+        align-self: center;
+    }
+    
+    .projectCard img:nth-child(2) {
+        align-self: flex-end;
+    }
+}
+
 .aboutColumns {
     padding:3.333rem 8.889rem;
     display: flex;
@@ -201,12 +242,11 @@ nav, ul {
     padding-bottom: 30px;
 }
 
-
-
 .aboutColumns img {
     width: 50%;
     height: 630px;
     background-color: cornsilk;
+    object-fit: cover;
 }
 
 
@@ -289,6 +329,29 @@ nav, ul {
     flex-flow: column nowrap;
     justify-content: center;
 }
+
+.blockContent {
+    padding: 0px 360px;
+}
+
+.blockContentImage {
+    padding: 0px 160px;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.slider-container {
+    height: 600px;
+    padding: 0px 160px;
+    position: absolute;
+}
+
+.slider-content img {
+    height: 100%;
+    position: absolute;
+}
+
 
 
 .contactSection {
