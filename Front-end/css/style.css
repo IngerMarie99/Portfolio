@@ -126,7 +126,6 @@ nav, ul {
     background-repeat: no-repeat;
     display:flex;
     flex-flow: column;
-    background-color: rgb(144, 144, 144);
     width: 100vw;
     height: 100vh;
     padding: 270px var(--marginsLeftRight-D);
@@ -182,7 +181,6 @@ nav, ul {
         background-repeat: no-repeat;
         display:flex;
         flex-flow: column;
-        background-color: rgb(144, 144, 144);
         width: 100vw;
         height: 100vh;
         padding: 320px var(--marginsLeftRight-M);
@@ -204,7 +202,6 @@ nav, ul {
         background-repeat: no-repeat;
         display:flex;
         flex-flow: column;
-        background-color: rgb(144, 144, 144);
         width: 100vw;
         height: 100vh;
         padding: 280px var(--marginsLeftRight-T);
