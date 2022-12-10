@@ -382,12 +382,9 @@ nav, ul {
     flex-flow: row wrap;
     gap: 30px;
     justify-content: center;
+    padding: 0px 40px;
 }
 
-.tools-flex img {
-    width: 50px;
-    align-self: center;
-}
 
 .tool {
     display: flex;
@@ -399,6 +396,33 @@ nav, ul {
 .tool img {
     height: 50px;
     object-fit: contain;
+}
+
+.tool span {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+    .tools-flex {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 30px;
+        justify-content: center;
+        padding: 0px 40px;
+    }
+    .tool img {
+        height: 40px;
+        object-fit: contain;
+    }
+    .tool span {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+    .tools-flex {
+        padding: 0px 0px;
+    }
 }
 
 .marginsBlockContent {
