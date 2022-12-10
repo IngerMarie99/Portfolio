@@ -26,11 +26,7 @@ const querySingleProject = `
     project_name,
     "main_image":main_image.asset->url,
     
-    when,
-    subject,
-    client,
-    time_frame,
-
+    project_details,
 
     introduction,
     brief,
@@ -153,6 +149,8 @@ async function getProject() {
        handleParagraphs(result[0].brief, 'brief')
        handleParagraphs(result[0].issue, 'issue')
        handleParagraphs(result[0].visual_identity, 'visual-identity')
+       handleParagraphs(result[0].project_details, 'project-details')
+
 
        plotTools(result[0].tools, 'tools')
        

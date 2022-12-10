@@ -33,31 +33,15 @@ export default {
             type:'blockContent',
         },
         {
-            name:'when',
-            title:'When',
-            type:'string',
-        }, 
-        {
-            name:'subject',
-            title:'Subject',
-            type:'string',
-        },
-        {
-            name:'client',
-            title:'Client',
-            type:'string',
-        }, 
-        {
-            name:'time_frame',
-            title:'Time frame',
-            type:'string',
-        },
-        {
             name:'group_members',
             title:'Group members',
             type:'string',
         },
-        
+        {
+            name:'project_details',
+            title: 'Project details',
+            type:'blockContent',
+        },
         {
             name: 'tools',
             title: 'Tools',
