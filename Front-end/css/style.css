@@ -69,7 +69,7 @@ nav, ul {
 }
 
 .overlay-menu {
-    height: 80vh;
+    height: 90vh;
     width: 100vw;
     background-color: var(--white);
     z-index: 10;
