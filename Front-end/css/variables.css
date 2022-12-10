@@ -76,9 +76,14 @@ button:hover {
 }
 
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
     p {
         font-size: 0.889rem;
+        font-weight: 400;
+    }
+    .roleText {
+        font-size: 0.667rem;
+        color: var(--accentDark);
         font-weight: 400;
     }
     

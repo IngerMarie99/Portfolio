@@ -50,11 +50,20 @@ header {
     height: 75px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
     header {
         margin: 10%;
     }
 }
+
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+     header {
+        margin: 15px 10%;
+    }
+}
+
+
+
 
 nav, ul {
     display: flex;
@@ -95,7 +104,7 @@ nav, ul {
 
 
 
-@media screen and (min-width: 540px){
+@media screen and (min-width: 480px){
     .desktop-nav{
         display: block;
     }  
@@ -120,13 +129,18 @@ nav, ul {
     background-color: rgb(144, 144, 144);
     width: 100vw;
     height: 100vh;
-    padding: 100px 160px;
+    padding: 270px 160px;
    transform: translateY(-135px);
+}
 
+.hero-logo {
+    width: 555px;
 }
 
 
-.paddingLeft375 {
+
+
+.role-text-position {
     padding-left: 375px;
 }
 
@@ -158,6 +172,51 @@ nav, ul {
         transform: translateY(0px);
     }
     
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        background-image: url('../assets/Images/Hero_image.jpg');
+        background-size: center;
+        background-position: right;
+        background-repeat: no-repeat;
+        display:flex;
+        flex-flow: column;
+        background-color: rgb(144, 144, 144);
+        width: 100vw;
+        height: 100vh;
+        padding: 200px 10%;
+       transform: translateY(-200px);
+    }
+    .hero-logo {
+        width: 300px;
+    }
+    .role-text-position {
+        padding-left: 50%;
+    }
+
+}
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+    .hero {
+        background-image: url('../assets/Images/Hero_image.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display:flex;
+        flex-flow: column;
+        background-color: rgb(144, 144, 144);
+        width: 100vw;
+        height: 100vh;
+        padding: 280px 10%;
+       transform: translateY(-135px);
+    }
+    .hero-logo {
+        width: 350px;
+    }
+    .role-text-position {
+        padding-left: 20%;
+    }
+
 }
 
 
@@ -194,7 +253,7 @@ nav, ul {
     align-self: flex-end;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
     .projectCard {
         display: flex;
         flex-flow: row nowrap;
