@@ -7,7 +7,21 @@
     --accentLight: #FFA877;
     --identityFont: 'Playfair Display', serif;
     --bodyFont: 'Montserrat', sans-serif;
+    
+    /* DESKTOP MARGINS */
+    --marginsLeftRight-D: 15%;
+    --largeMarginsLeftRight-D: 25%;
+
+    /* TABLET MARGINS */
+    --marginsLeftRight-T: 10%;
+    --largeMarginsLeftRight-T: 15%;
+
+    /* MOBILE MARGINS */
+    --marginsLeftRight-M: 10%;
+    --largeMarginsLeftRight-M: 10%;
+    
 }
+
 
 p {
     font-size: 1rem;
