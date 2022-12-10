@@ -178,21 +178,21 @@ nav, ul {
     .hero {
         background-image: url('../assets/Images/Hero_image.jpg');
         background-size: center;
-        background-position: right;
+        background-position: 55% 70%;
         background-repeat: no-repeat;
         display:flex;
         flex-flow: column;
         background-color: rgb(144, 144, 144);
         width: 100vw;
         height: 100vh;
-        padding: 200px var(--marginsLeftRight-M);
+        padding: 320px var(--marginsLeftRight-M);
        transform: translateY(-200px);
     }
     .hero-logo {
         width: 300px;
     }
     .role-text-position {
-        padding-left: 45%;
+        padding-left: 20%;
     }
 
 }
@@ -222,62 +222,87 @@ nav, ul {
 
 #main h1 {
     text-align: center;
-    padding-top: 45px;
     padding-bottom: 45px;
+    width: 100%;
 }
 
+.projectContainer {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 var(--marginsLeftRight-D);
+    gap: 60px;
+}
 
 .projectCard {
+    width: 45%;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    width: 100%;
-    min-height: 26rem;
-    gap: 5%;
-    padding: 2rem;
+    flex-flow: column;
 }
 
 .projectCard img {
-    width: 300px;
+    width: 100%;
     height: 300px;
     object-fit: cover;
+    border-radius: 3px;
 }
 
-.projectCard h2 {
+.projectCard h3 {
     text-align: left;
-    width: 300px;
-    align-self: center;
 }
 
-.projectCard img:nth-child(2) {
-    align-self: flex-end;
-}
 
 @media screen and (max-width: 480px) {
-    .projectCard {
+    .projectContainer {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
+        flex-flow: column wrap;
+        margin: 0 var(--marginsLeftRight-M);
+        gap: 50px;
+    }
+    
+    .projectCard {
         width: 100%;
-        min-height: 26rem;
-        gap: 5%;
-        padding: 2rem;
+        display: flex;
+        flex-flow: column;
     }
     
     .projectCard img {
-        width: 100px;
-        height: 100px;
+        width: 100%;
+        height: 300px;
         object-fit: cover;
+        border-radius: 3px;
     }
     
-    .projectCard h2 {
+    .projectCard h3 {
         text-align: left;
-        width: 100px;
-        align-self: center;
+        margin-top:10px
     }
     
-    .projectCard img:nth-child(2) {
-        align-self: flex-end;
+}
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+    .projectContainer {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 0 var(--marginsLeftRight-T);
+        gap: 50px;
+    }
+    
+    .projectCard {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+    }
+    
+    .projectCard img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 3px;
+    }
+    
+    .projectCard h3 {
+        text-align: left;
+        margin-top:10px
+
     }
 }
 
@@ -309,6 +334,8 @@ nav, ul {
 
 .flex-column-section img {
     width: 100%;
+    border-radius: 3px;
+
 }
 
 .left-column {
@@ -393,6 +420,8 @@ nav, ul {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    border-radius: 3px;
+
 }
 
 @media screen and (max-width: 480px) {
@@ -403,7 +432,10 @@ nav, ul {
         width: 100%;
         height: 250px;
         object-fit: cover;
+        border-radius: 3px;
+
     }
+    
 }
 
 @media screen and (max-width: 1024px) and (min-width: 480px) {
@@ -434,6 +466,8 @@ nav, ul {
     width: 50%;
     height: 630px;
     object-fit: cover;
+    border-radius: 3px;
+
 }
 
 @media screen and (max-width: 480px) {
@@ -457,6 +491,8 @@ nav, ul {
         width: 100%;
         height: 450px;
         object-fit: cover;
+        border-radius: 3px;
+
     }
 }
 
@@ -480,37 +516,33 @@ nav, ul {
     .aboutColumns img {
         height: 450px;
         object-fit: cover;
+        border-radius: 3px;
+
     }
 }
 
 
-.contactSection {
-    margin: 80px var(--marginsLeftRight-D);
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 20px;
-}
-
-@media screen and (max-width: 480px) {
-    .contactSection {
-        margin: 80px var(--marginsLeftRight-M);
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 480px) {
-    .contactSection {
-        margin: 80px var(--marginsLeftRight-T);
-    }
-}
 
 
 footer {
     text-align: center;
-    margin-top: 1.111rem;
-    margin-bottom: 1.111rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    background-color: var(--white);
+    border-top: 1px solid var(--accentDark);
+}
+
+.contact {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    justify-content: center;
+
 }
 
 .socialMedia {
+    margin-top: 30px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -521,5 +553,9 @@ footer {
     font-size: 0.667rem;
     padding-top: 0.556rem;
 }
+
+
+
+
 
 

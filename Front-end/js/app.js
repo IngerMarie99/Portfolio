@@ -83,7 +83,9 @@ async function getProject() {
 
         // MAIN IMAGE
         const coverProject = document.querySelector('.project-page-top-img');
-        coverProject.setAttribute('src', result[0].main_image);
+        if(result[0].main_image) {
+            coverProject.setAttribute('src', result[0].main_image);
+        }
 
         // TARGET AUDIENCE
         const targetAudienceHeading = document.getElementById('target-audience-heading');
@@ -93,8 +95,9 @@ async function getProject() {
         targetAudience.textContent = result[0].target_audience;
         
         const targetAudienceImage = document.getElementById('target-audience-image');
-        targetAudienceImage.setAttribute('src', result[0].target_audience_img);
-
+        if(result[0].target_audience_img) {
+            targetAudienceImage.setAttribute('src', result[0].target_audience_img);
+        }
         // LOGO
         const logoHeading = document.getElementById('logo-heading');
         logoHeading.textContent = result[0].logo_heading;
@@ -200,14 +203,11 @@ async function getAllProjects() {
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);
 
-        const secondImg = document.createElement('img');
-        secondImg.setAttribute('src', project.second_image);
 
-        const titleElement = document.createElement('h2');
+        const titleElement = document.createElement('h3');
         titleElement.textContent = project.project_name;
 
         projectCard.append(mainImg);
-        projectCard.append(secondImg);
         projectCard.append(titleElement);
 
         

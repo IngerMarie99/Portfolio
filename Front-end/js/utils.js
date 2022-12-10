@@ -33,10 +33,10 @@ export function handleParagraphs(blockContent, container) {
                 if (p.style === 'h4') {
                     pElement = document.createElement('h4')
                 }
-                if (p.children[0].marks = 'strong') {
+                if (p.children[0].marks === 'strong') {
                     pElement == document.createElement('strong')
                 }
-                if (p.children[0].marks = 'em') {
+                if (p.children[0].marks === 'em') {
                     pElement == document.createElement('em')
                 }
 

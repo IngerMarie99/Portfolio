@@ -28,7 +28,7 @@ p {
     font-weight: 400;
 }
 
-b {
+strong {
     font-size: 1rem;
     font-weight: 600;
 }
@@ -76,17 +76,20 @@ button {
     cursor: pointer;
 
     background-color: var(--accentDark);
-    border: 0;
+    border: 1px solid var(--accentDark);
+    border-radius: 3px;
     
     padding: 7.5px 15px;
-    transition: all 1s ease-in-out;
+    transition: all 0.10s ease-in-out;
 
 
 }
 
 button:hover {
-    transform: scale(1.25);
-    background: linear-gradient(284.64deg, #FFA877 0.91%, #883D13 14.74%, #883D13 75.3%, #FFA877 126.02%);;
+    background-color: var(--white);
+    border: 1px solid var(--accentDark);
+    border-radius: 3px;
+    color: var(--accentDark);
 }
 
 
