@@ -72,9 +72,7 @@ const querySingleProject = `
     typography_about,
     "typography_image": typography_image.asset->url,
     
-    pattern_heading,
-    pattern_about,
-    "pattern_image": pattern_image.asset->url,
+    pattern,
 
     wire_frames,
     wire_frames_gallery[],
@@ -157,18 +155,6 @@ async function getProject() {
             typographyImage.setAttribute('src',result[0].typography_image);
         }
 
-        // PATTERN
-        const patternHeading = document.getElementById('pattern-heading');
-        patternHeading.textContent = result[0].pattern_heading;
-
-        const patternAbout = document.getElementById('pattern-about');
-        patternAbout.textContent = result[0].pattern_about;
-
-        const patternImage = document.querySelector('.pattern-image');
-        if(result[0].pattern_image) {
-            patternImage.setAttribute('src',result[0].pattern_image);
-        }
-
 
        handleParagraphs(result[0].introduction, 'introduction') 
        handleParagraphs(result[0].brief, 'brief')
@@ -177,6 +163,7 @@ async function getProject() {
        handleParagraphs(result[0].concept, 'concept')
        handleParagraphs(result[0].about_the_name, 'name')
        handleParagraphs(result[0].visual_identity, 'visual-identity')
+       handleParagraphs(result[0].pattern, 'pattern')
        handleParagraphs(result[0].project_details, 'project-details')
        handleParagraphs(result[0].target_audience, 'target-audience')
        handleParagraphs(result[0].competitive_analysis, 'competitive-analysis')

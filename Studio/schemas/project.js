@@ -215,24 +215,10 @@ export default {
         },
         // PATTERN
         {
-            name:'pattern_heading',
-            title:'pattern heading',
-            type:'string',
+            name:'pattern',
+            title:'Pattern',
+            type:'blockContent',
         },
-        {
-            name:'pattern_about',
-            title:'About the pattern',
-            type:'string',
-        },
-        {
-            name:'pattern_image',
-            title:'pattern image',
-            type:'image',
-        },
-
-
-        
-
         // WIRE FRAMES
         {
             name:'wire_frames',
