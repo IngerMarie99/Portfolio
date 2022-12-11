@@ -18,6 +18,7 @@ const queryAllProjects = `
     project_name,
     slug,
     "main_image": main_image.asset->url,
+    "second_image":second_image.asset->url,
     }
     `;
 const querySingleProject = `
@@ -202,11 +203,14 @@ async function getAllProjects() {
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);
 
+        const secondImg = document.createElement('img');
+        secondImg.setAttribute('src', project.second_image);
 
         const titleElement = document.createElement('h3');
         titleElement.textContent = project.project_name;
 
         projectCard.append(mainImg);
+        projectCard.append(secondImg);
         projectCard.append(titleElement);
 
         
