@@ -4,6 +4,11 @@ export default {
     type:'document',
     fields: [
         {
+            name:'main_image',
+            title:'Main image',
+            type:'image',
+        },
+        {
             name:'project_name', 
             title: 'Project name', //dette er tittel inne i skjemaet
             type: 'string' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
@@ -18,26 +23,6 @@ export default {
               },
         }, 
         {
-            name:'introduction', 
-            title: 'Introduction', //dette er tittel inne i skjemaet
-            type: 'blockContent' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
-        },
-        {
-            name:'brief',
-            title:'Brief',
-            type:'blockContent',
-        },
-        {
-            name:'issue',
-            title:'Issue',
-            type:'blockContent',
-        },
-        {
-            name:'group_members',
-            title:'Group members',
-            type:'string',
-        },
-        {
             name:'project_details',
             title: 'Project details',
             type:'blockContent',
@@ -47,7 +32,84 @@ export default {
             title: 'Tools',
             type: 'array',
             of: [{type: 'reference', to: {type: 'tools'}}],
-          },
+        },
+
+        {
+            name:'introduction', 
+            title: 'Introduction', //dette er tittel inne i skjemaet
+            type: 'blockContent' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
+        },
+
+        {
+            name:'brief',
+            title:'Brief',
+            type:'blockContent',
+        },
+
+        {
+            name:'background',
+            title:'Background',
+            type:'blockContent',
+        },
+
+        {
+            name:'issue',
+            title:'Issue',
+            type:'blockContent',
+        },
+
+        {
+            name:'concept',
+            title:'Concept',
+            type:'blockContent',
+        },
+        
+        {
+            name:'about_the_name',
+            title:'About the name',
+            type:'blockContent',
+        },
+
+
+        // IMAGE GALLERY
+
+        {
+            name:'gallery_heading',
+            title:'Gallery heading',
+            type:'string',
+        },
+        {
+            name:'gallery_about',
+            title:'About the gallery',
+            type:'string',
+        },
+        {
+            name: 'gallery',
+            title: 'Gallery',
+            type: 'array',
+            of: [{type:'image'}],
+        },
+
+        // TARGET AUDIENCE
+        
+        {
+            name:'target_audience',
+            title:'Target audience',
+            type:'blockContent',
+        },
+
+        // PERSONA
+        {
+            name:'persona',
+            title:'Persona',
+            type:'blockContent',
+        },
+        {
+            name: 'persona_gallery',
+            title: 'Persona gallery',
+            type: 'array',
+            of: [{type:'image'}],
+        },
         
         // COMPETITIVE ANALYSIS
         {
@@ -56,29 +118,8 @@ export default {
             type: 'blockContent',
         },
 
-        // TARGET AUDIENCE
-        {
-            name:'target_audience_heading',
-            title:'Target audience heading',
-            type:'string',
-        },
-        {
-            name:'target_audience',
-            title:'Target audience text',
-            type:'string',
-        },
-        {
-            name:'target_audience_img',
-            title:'Target audience image',
-            type:'image',
-        },
-
-         // PERSONAS
-        {
-            name:'personas',
-            title:'Personas',
-            type:'blockContent',
-        },
+        
+        
 
         // SITE MAP
         {
@@ -92,6 +133,13 @@ export default {
         {
             name:'visual_identity',
             title:'Visual identity',
+            type:'blockContent',
+        },
+
+        // VISUAL IDENTITY
+        {
+            name:'mood_board',
+            title:'Mood board',
             type:'blockContent',
         },
         
@@ -165,30 +213,50 @@ export default {
             title:'Typography image',
             type:'image',
         },
+        // PATTERN
+        {
+            name:'pattern_heading',
+            title:'pattern heading',
+            type:'string',
+        },
+        {
+            name:'pattern_about',
+            title:'About the pattern',
+            type:'string',
+        },
+        {
+            name:'pattern_image',
+            title:'pattern image',
+            type:'image',
+        },
 
 
+        
+
+        // WIRE FRAMES
+        {
+            name:'wire_frames',
+            title:'Wire frames',
+            type:'blockContent',
+        },
+        {
+            name: 'wire_frames_gallery',
+            title: 'Wire frames gallery',
+            type: 'array',
+            of: [{type:'image'}],
+        },
+
+        {
+            name:'process',
+            title:'Process',
+            type:'blockContent',
+        },
+        
         {
             name:'results',
             title:'Results',
             type:'blockContent',
         },
-        {
-            name:'link_prototype',
-            title:'Link til prototype',
-            type:'url',
-        },
-
-        {
-            name:'main_image',
-            title:'Main image',
-            type:'image',
-        },
-        {
-            name:'second_image',
-            title:'Second image',
-            type:'image',
-        },
-
         
     ]
 

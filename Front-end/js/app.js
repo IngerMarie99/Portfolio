@@ -1,8 +1,7 @@
 import { sanityUrl } from './env.js';
 import handleHamburger from './hamburger.js';
-import { readUrl } from './utils.js';
+import { handleGallery, readUrl } from './utils.js';
 import { handleParagraphs } from './utils.js';
-
 
 handleHamburger();
 
@@ -11,7 +10,6 @@ const urlString = readUrl();
 if (window.scrollY) {
     console.log(window.scroll(0, 0));  // reset the scroll position to the top left of the document.
   }
-console.log(window.pageYOffset)
 
 const queryAllProjects = `
 *[_type == "project"]{
@@ -23,30 +21,40 @@ const queryAllProjects = `
     `;
 const querySingleProject = `
 *[slug.current == "${urlString}"]{
-    project_name,
     "main_image":main_image.asset->url,
+    project_name,
     
     project_details,
-
+    tools[]->{name, "image": image.asset->url},
+    
     introduction,
     brief,
+    background,
     issue,
+    concept,
+
+    about_the_name,
+
+    gallery_heading,
+    gallery_about,
+    gallery[],
+
+
+    
 
     
     link_prototype,
-    colors,
     competitive_analysis,
-    group_members,
 
-    personas,
     site_map,
     
 
-    target_audience_heading,
     target_audience,
-    "target_audience_img": target_audience_img.asset->url,
+    persona,
+    persona_gallery[],
 
     visual_identity,
+    mood_board,
     
     logo_heading,
     logo_text,
@@ -63,9 +71,17 @@ const querySingleProject = `
     typography_heading,
     typography_about,
     "typography_image": typography_image.asset->url,
+    
+    pattern_heading,
+    pattern_about,
+    "pattern_image": pattern_image.asset->url,
 
-    tools[]->{name, "image": image.asset->url},
+    wire_frames,
+    wire_frames_gallery[],
 
+    process,
+
+    results,
 }
 `;
 
@@ -87,17 +103,12 @@ async function getProject() {
             coverProject.setAttribute('src', result[0].main_image);
         }
 
-        // TARGET AUDIENCE
-        const targetAudienceHeading = document.getElementById('target-audience-heading');
-        targetAudienceHeading.textContent = result[0].target_audience_heading;
-        
-        const targetAudience = document.getElementById('target-audience');
-        targetAudience.textContent = result[0].target_audience;
-        
-        const targetAudienceImage = document.getElementById('target-audience-image');
-        if(result[0].target_audience_img) {
-            targetAudienceImage.setAttribute('src', result[0].target_audience_img);
-        }
+        const galleryHeading = document.getElementById('gallery-header');
+        galleryHeading.textContent = result[0].gallery_heading;
+
+        const galleryAbout = document.getElementById('gallery-about');
+        galleryAbout.textContent = result[0].gallery_about;
+
         // LOGO
         const logoHeading = document.getElementById('logo-heading');
         logoHeading.textContent = result[0].logo_heading;
@@ -118,7 +129,6 @@ async function getProject() {
         colorsAbout.textContent = result[0].colors_about;
 
         const colorsImage = document.querySelector('.colors-image');
-        console.log(result[0].colors_image)
         if(result[0].colors_image) {
             colorsImage.setAttribute('src',result[0].colors_image);
         }
@@ -143,21 +153,49 @@ async function getProject() {
         typographyAbout.textContent = result[0].typography_about;
 
         const typographyImage = document.querySelector('.typography-image');
-        if(result[0].typography_image !== null) {
+        if(result[0].typography_image) {
             typographyImage.setAttribute('src',result[0].typography_image);
+        }
+
+        // PATTERN
+        const patternHeading = document.getElementById('pattern-heading');
+        patternHeading.textContent = result[0].pattern_heading;
+
+        const patternAbout = document.getElementById('pattern-about');
+        patternAbout.textContent = result[0].pattern_about;
+
+        const patternImage = document.querySelector('.pattern-image');
+        if(result[0].pattern_image) {
+            patternImage.setAttribute('src',result[0].pattern_image);
         }
 
 
        handleParagraphs(result[0].introduction, 'introduction') 
        handleParagraphs(result[0].brief, 'brief')
+       handleParagraphs(result[0].background, 'background')
        handleParagraphs(result[0].issue, 'issue')
+       handleParagraphs(result[0].concept, 'concept')
+       handleParagraphs(result[0].about_the_name, 'name')
        handleParagraphs(result[0].visual_identity, 'visual-identity')
        handleParagraphs(result[0].project_details, 'project-details')
+       handleParagraphs(result[0].target_audience, 'target-audience')
+       handleParagraphs(result[0].competitive_analysis, 'competitive-analysis')
+       handleParagraphs(result[0].persona, 'persona')
+       handleParagraphs(result[0].wire_frames, 'wire-frames')
+
+       handleParagraphs(result[0].process, 'process')
+       handleParagraphs(result[0].results, 'results')
+
+
 
 
        plotTools(result[0].tools, 'tools')
        
-       
+       handleGallery(result[0].gallery,'#project-gallery')
+       handleGallery(result[0].persona_gallery,'#persona-gallery')
+       handleGallery(result[0].wire_frames_gallery,'#wire-frames-gallery')
+
+
    
 }
 

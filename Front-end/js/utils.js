@@ -26,10 +26,67 @@ function getHref(mark, markDefs) {
     return undefined;
 }
 
+export function handleGallery(gallery, galleryId) {
+    if(!gallery) {
+        return;
+    }
+
+    // Container container
+    const container = document.querySelector(galleryId);
+    container.classList.add('slideshow-container');
+    // Container of image list
+    const imagesContainer = document.createElement('div');
+    imagesContainer.classList.add('slideshow-images');
+
+    // Prev & next buttons
+    const prevButton = document.createElement('a');
+    prevButton.setAttribute('onclick', 'plusSlides("'+ galleryId +'", '+ -1 +')');
+    prevButton.innerHTML = "&#10094;";
+    prevButton.classList.add('prev');
+    const nextButton = document.createElement('a');
+    nextButton.classList.add('next');
+    nextButton.setAttribute('onclick', 'plusSlides("'+ galleryId +'", '+ 1 +')');
+    nextButton.innerHTML = "&#10095";
+    
+    // dots container
+    const dotContainer = document.createElement('div');
+    dotContainer.classList.add('slideshow-dots');
+    dotContainer.setAttribute('style', 'text-align:center');
+
+    gallery.forEach(image => {
+        const fileNameArray = image.asset._ref.split('-');
+        const fileName = `${fileNameArray[1]}-${fileNameArray[2]}.${fileNameArray[3]}`;
+        
+        const imageContainer = document.createElement('div');
+        imageContainer.classList.add('mySlides');
+        
+        const  imgElement = document.createElement('img');
+        imgElement.setAttribute('width', '100%');
+        imgElement.setAttribute('src', `${cdnUrl}${fileName}`);
+
+        imageContainer.append(imgElement);
+        imagesContainer.append(imageContainer);
+    })
+
+    
+    for(let i=0; i<gallery.length; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.setAttribute('onclick', 'currentSlide("'+ galleryId +'", '+ (i+1) +')');
+        dotContainer.append(dot);
+    }
+
+    container.append(imagesContainer);
+    container.append(prevButton);
+    container.append(nextButton);
+    container.append(document.createElement('br'));
+    container.append(dotContainer);
+
+    showSlides(galleryId, 1);
+}
+
 export function handleParagraphs(blockContent, container) {
-    console.log (container)
     const blockContainer = document.getElementById(container)
-    console.log(blockContainer)
 
     if(blockContent && blockContent.length > 0) {
         blockContent.map(p => {

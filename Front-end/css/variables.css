@@ -2,9 +2,11 @@
 
 :root {
     --white: #F3F3F3;
+    --white80: #F3F3F380;
     --black: #2E2E2E;
     --accentDark: #883D13;
     --accentLight: #FFA877;
+    --accentDark20: #DECFC6;
     --identityFont: 'Playfair Display', serif;
     --bodyFont: 'Montserrat', sans-serif;
     
