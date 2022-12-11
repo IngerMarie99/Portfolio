@@ -28,6 +28,7 @@ const querySingleProject = `
     
     project_details,
 
+
     introduction,
     brief,
     issue,
@@ -83,9 +84,7 @@ async function getProject() {
 
         // MAIN IMAGE
         const coverProject = document.querySelector('.project-page-top-img');
-        if(result[0].main_image) {
-            coverProject.setAttribute('src', result[0].main_image);
-        }
+        coverProject.setAttribute('src', result[0].main_image);
 
         // TARGET AUDIENCE
         const targetAudienceHeading = document.getElementById('target-audience-heading');
@@ -95,9 +94,8 @@ async function getProject() {
         targetAudience.textContent = result[0].target_audience;
         
         const targetAudienceImage = document.getElementById('target-audience-image');
-        if(result[0].target_audience_img) {
-            targetAudienceImage.setAttribute('src', result[0].target_audience_img);
-        }
+        targetAudienceImage.setAttribute('src', result[0].target_audience_img);
+
         // LOGO
         const logoHeading = document.getElementById('logo-heading');
         logoHeading.textContent = result[0].logo_heading;
@@ -106,9 +104,7 @@ async function getProject() {
         logoText.textContent = result[0].logo_text;
 
         const logoFile = document.querySelector('.logo-file');
-        if(result[0].logo_file) {
-            logoFile.setAttribute('src', result[0].logo_file);
-        }
+        logoFile.setAttribute('src', result[0].logo_file);
        
         // COLORS
         const colorsHeading = document.getElementById('colors-heading');
@@ -118,10 +114,7 @@ async function getProject() {
         colorsAbout.textContent = result[0].colors_about;
 
         const colorsImage = document.querySelector('.colors-image');
-        console.log(result[0].colors_image)
-        if(result[0].colors_image) {
-            colorsImage.setAttribute('src',result[0].colors_image);
-        }
+        colorsImage.setAttribute('src',result[0].colors_image);
 
         // ICONS
         const iconsHeading = document.getElementById('icons-heading');
@@ -131,9 +124,7 @@ async function getProject() {
         iconsAbout.textContent = result[0].icons_about;
 
         const iconsImage = document.querySelector('.icons-image');
-        if(result[0].icons_image) {
-            iconsImage.setAttribute('src',result[0].icons_image);
-        }
+        iconsImage.setAttribute('src',result[0].icons_image);
                
         // TYPOGRAPHY
         const typographyHeading = document.getElementById('typography-heading');
@@ -143,17 +134,13 @@ async function getProject() {
         typographyAbout.textContent = result[0].typography_about;
 
         const typographyImage = document.querySelector('.typography-image');
-        if(result[0].typography_image !== null) {
-            typographyImage.setAttribute('src',result[0].typography_image);
-        }
+        typographyImage.setAttribute('src',result[0].typography_image)
 
 
        handleParagraphs(result[0].introduction, 'introduction') 
        handleParagraphs(result[0].brief, 'brief')
        handleParagraphs(result[0].issue, 'issue')
        handleParagraphs(result[0].visual_identity, 'visual-identity')
-       handleParagraphs(result[0].project_details, 'project-details')
-
 
        plotTools(result[0].tools, 'tools')
        
@@ -169,6 +156,7 @@ function plotTools(tools, container) {
         const imgContainer =  document.createElement('img');
         imgContainer.setAttribute('src', tool.image);
         imgContainer.setAttribute('alt', `icon of ${tool.name}`)
+        imgContainer.classList.add()
         toolContainer.append(imgContainer);
         const toolTitle = document.createElement('span');
         toolTitle.textContent = tool.name;
@@ -203,11 +191,14 @@ async function getAllProjects() {
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);
 
+        const secondImg = document.createElement('img');
+        secondImg.setAttribute('src', project.second_image);
 
-        const titleElement = document.createElement('h3');
+        const titleElement = document.createElement('h2');
         titleElement.textContent = project.project_name;
 
         projectCard.append(mainImg);
+        projectCard.append(secondImg);
         projectCard.append(titleElement);
 
         
