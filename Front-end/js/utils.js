@@ -8,6 +8,23 @@ export function readUrl() {
     return undefined;
 };
 
+function getMarkDefType(mark, markDefs) {
+    for(let i=0; i < markDefs.length; i++) {
+        if(markDefs[i]._key == mark) {
+            return markDefs[i]._type;
+        }
+    };
+    return undefined;
+}
+
+function getHref(mark, markDefs) {
+    for(let i=0; i < markDefs.length; i++) {
+        if(markDefs[i]._key == mark) {
+            return markDefs[i].href;
+        }
+    };
+    return undefined;
+}
 
 export function handleParagraphs(blockContent, container) {
     console.log (container)
@@ -16,46 +33,48 @@ export function handleParagraphs(blockContent, container) {
 
     if(blockContent && blockContent.length > 0) {
         blockContent.map(p => {
-            if(p._type === 'block') {
-                let pElement = document.createElement('p');
-                if (p.style === 'normal') {
-                    pElement = document.createElement('p')
-                }
-                if (p.style === 'h1') {
-                    pElement = document.createElement('h1')
-                }
-                if (p.style === 'h2') {
-                    pElement = document.createElement('h2')
-                }
-                if (p.style === 'h3') {
-                    pElement = document.createElement('h3')
-                }
-                if (p.style === 'h4') {
-                    pElement = document.createElement('h4')
-                }
-                if (p.children[0].marks === 'strong') {
-                    pElement == document.createElement('strong')
-                }
-                if (p.children[0].marks === 'em') {
-                    pElement == document.createElement('em')
-                }
+            switch(p._type) {
+                case 'image':
+                    const fileNameArray = p.asset._ref.split('-');
+                    const fileName = `${fileNameArray[1]}-${fileNameArray[2]}.${fileNameArray[3]}`;
+                    const  imgElement = document.createElement('img');
+                    imgElement.setAttribute('src', `${cdnUrl}${fileName}`);
+                    blockContainer.append(imgElement);
 
-                
-                pElement.classList.add('blockContent');
+                    imgElement.classList.add('blockContentImage');
+                break;
+                default:
+                    // Setting up block (paragraph / header ++)
+                    let pElement;
+                    if(['h1','h2','h3','h4'].includes(p.style)) {
+                        pElement = document.createElement(p.style);
+                    } else {
+                        pElement = document.createElement('p')
+                    }
+                    pElement.classList.add('blockContent');
 
-                pElement.textContent = p.children[0].text;
-                blockContainer.append(pElement)
-            }
+                    // Adding contents
+                    if(p._type === 'block') {
+                        p.children.forEach(child => {
+                            if(['strong','em'].includes(child.marks[0])) {
+                                let childElement = document.createElement(child.marks[0]);
+                                childElement.textContent = child.text;
+                                pElement.append(childElement);
+                            } else if(getMarkDefType(child.marks[0], p.markDefs) == 'link') {
+                                let childElement = document.createElement('a');
+                                childElement.textContent = child.text;
+                                childElement.setAttribute('href', getHref(child.marks[0], p.markDefs));
+                                pElement.append(childElement);
+                            } else {
+                                pElement.append(child.text);
+                            }
+                        });
 
-            if(p._type === 'image') {
-                const fileNameArray = p.asset._ref.split('-');
-                const fileName = `${fileNameArray[1]}-${fileNameArray[2]}.${fileNameArray[3]}`;
-                const  imgElement = document.createElement('img');
-                imgElement.setAttribute('src', `${cdnUrl}${fileName}`);
-                blockContainer.append(imgElement);
-
-                imgElement.classList.add('blockContentImage');
-            }
+                        // Adding block to parent container
+                        blockContainer.append(pElement)
+                    }
+                break;
+            }    
         });
     }
 }
