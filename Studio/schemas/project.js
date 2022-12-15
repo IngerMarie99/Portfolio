@@ -196,6 +196,13 @@ export default {
             type:'image',
         },
 
+         // ICONS 2
+         {
+            name:'icons',
+            title:'Icons',
+            type:'blockContent',
+        },
+
 
         // TYPOGRAPHY
         {

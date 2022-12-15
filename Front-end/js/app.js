@@ -68,6 +68,8 @@ const querySingleProject = `
     icons_about,
     "icons_image": icons_image.asset->url,
 
+    icons,
+
     typography_heading,
     typography_about,
     "typography_image": typography_image.asset->url,
@@ -155,11 +157,13 @@ async function getProject() {
                
         // TYPOGRAPHY
         const typographyHeading = document.getElementById('typography-heading');
-        typographyHeading.textContent = result[0].typography_heading;
-
+        if(result[0].typography_heading) {
+            typographyHeading.textContent = result[0].typography_heading;
+        }
         const typographyAbout = document.getElementById('typography-about');
-        typographyAbout.textContent = result[0].typography_about;
-
+        if(result[0].typography_about) {
+            typographyAbout.textContent = result[0].typography_about;
+        }
         const typographyImage = document.querySelector('.typography-image');
         if(result[0].typography_image) {
             typographyImage.setAttribute('src',result[0].typography_image);
@@ -179,6 +183,7 @@ async function getProject() {
             {'key': 'target_audience', 'container': 'target-audience'},
             {'key': 'competitive_analysis', 'container': 'competitive-analysis'},
             {'key': 'persona'},
+            {'key': 'icons'},
             {'key': 'wire_frames', 'container': 'wire-frames'},
             {'key': 'process'},
             {'key': 'results'},
