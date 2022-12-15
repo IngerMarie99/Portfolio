@@ -34,14 +34,6 @@ const querySingleProject = `
     concept,
 
     about_the_name,
-
-    gallery_heading,
-    gallery_about,
-    gallery[],
-
-
-    
-
     
     link_prototype,
     competitive_analysis,
@@ -98,12 +90,6 @@ async function getProject() {
             coverProject.setAttribute('src', result[0].main_image);
         }
 
-        const galleryHeading = document.getElementById('gallery-header');
-        galleryHeading.textContent = result[0].gallery_heading;
-
-        const galleryAbout = document.getElementById('gallery-about');
-        galleryAbout.textContent = result[0].gallery_about;
-
 
         const elements = [
             {'key': 'introduction'},
@@ -118,6 +104,7 @@ async function getProject() {
             {'key': 'persona'},
             {'key': 'site_map', 'container': 'site-map'},
             {'key': 'visual_identity', 'container': 'visual-identity'},
+            {'key': 'mood_board', 'container': 'mood-board'},
             {'key': 'logo'},
             {'key': 'colors'},
             {'key': 'icons'},
@@ -141,7 +128,6 @@ async function getProject() {
 
        plotTools(result[0].tools, 'tools')
        
-       handleGallery(result[0].gallery,'#project-gallery')
        handleGallery(result[0].persona_gallery,'#persona-gallery')
        handleGallery(result[0].wire_frames_gallery,'#wire-frames-gallery')
 

@@ -71,24 +71,6 @@ export default {
         },
 
 
-        // IMAGE GALLERY
-
-        {
-            name:'gallery_heading',
-            title:'Gallery heading',
-            type:'string',
-        },
-        {
-            name:'gallery_about',
-            title:'About the gallery',
-            type:'string',
-        },
-        {
-            name: 'gallery',
-            title: 'Gallery',
-            type: 'array',
-            of: [{type:'image'}],
-        },
 
         // TARGET AUDIENCE
         
