@@ -25,9 +25,9 @@
 
 /* Slideshow container */
 .slideshow-container {
-  width: 75%;
+ /* width: 75%;*/
   position: relative;
-  margin: 0 auto;
+  margin: 0 var(--largeMarginsLeftRight-D);
 }
 
 /* Hide the images by default */

@@ -83,8 +83,17 @@ const querySingleProject = `
 }
 `;
 
-
   // end of queries
+
+
+function renderOrHide(result, propertyId, containerId) {
+    if(!result[0][propertyId]) {
+        document.getElementById(containerId).parentElement.style = 'display: none';
+    } else {
+    handleParagraphs(result[0][propertyId], containerId)
+    }
+}
+
 
 async function getProject() {
         const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
@@ -112,8 +121,9 @@ async function getProject() {
         logoHeading.textContent = result[0].logo_heading;
 
         const logoText = document.getElementById('logo-text');
-        logoText.textContent = result[0].logo_text;
-
+        if(result[0].logo_text) {
+            logoText.textContent = result[0].logo_text;
+        }
         const logoFile = document.querySelector('.logo-file');
         if(result[0].logo_file) {
             logoFile.setAttribute('src', result[0].logo_file);
@@ -156,24 +166,33 @@ async function getProject() {
         }
 
 
-       handleParagraphs(result[0].introduction, 'introduction') 
-       handleParagraphs(result[0].brief, 'brief')
-       handleParagraphs(result[0].background, 'background')
-       handleParagraphs(result[0].issue, 'issue')
-       handleParagraphs(result[0].concept, 'concept')
-       handleParagraphs(result[0].about_the_name, 'name')
-       handleParagraphs(result[0].visual_identity, 'visual-identity')
-       handleParagraphs(result[0].pattern, 'pattern')
-       handleParagraphs(result[0].project_details, 'project-details')
-       handleParagraphs(result[0].target_audience, 'target-audience')
-       handleParagraphs(result[0].competitive_analysis, 'competitive-analysis')
-       handleParagraphs(result[0].persona, 'persona')
-       handleParagraphs(result[0].wire_frames, 'wire-frames')
+        const elements = [
+            {'key': 'introduction'},
+            {'key': 'brief'},
+            {'key': 'background'},
+            {'key': 'issue'},
+            {'key': 'concept'},
+            {'key': 'about_the_name', 'container': 'name'},
+            {'key': 'visual_identity', 'container': 'visual-identity'},
+            {'key': 'pattern'},
+            {'key': 'project_details', 'container': 'project-details'},
+            {'key': 'target_audience', 'container': 'target-audience'},
+            {'key': 'competitive_analysis', 'container': 'competitive-analysis'},
+            {'key': 'persona'},
+            {'key': 'wire_frames', 'container': 'wire-frames'},
+            {'key': 'process'},
+            {'key': 'results'},
+        ]
+                
+        elements.forEach(block => {
+            renderOrHide(
+                result,
+                block.key,
+                block.container ? block.container : block.key
+            )
+        })
 
-       handleParagraphs(result[0].process, 'process')
-       handleParagraphs(result[0].results, 'results')
-
-
+        
 
 
        plotTools(result[0].tools, 'tools')
