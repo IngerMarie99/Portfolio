@@ -83,8 +83,6 @@ button {
     
     padding: 7.5px 15px;
     transition: all 0.10s ease-in-out;
-
-
 }
 
 button:hover {
@@ -92,6 +90,35 @@ button:hover {
     border: 1px solid var(--accentDark);
     border-radius: 3px;
     color: var(--accentDark);
+}
+
+.secondaryButton {
+    text-align: center;
+    font-family: var(--bodyFont);
+    font-size: 18px;
+    color: var(--accentDark);
+    cursor: pointer;
+    text-decoration: none;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    
+    transition: all 0.10s ease-in-out;
+}
+.secondaryButton:hover {
+    text-align: center;
+    font-family: var(--bodyFont);
+    font-size: 18px;
+    color: var(--accentDark);
+    cursor: pointer;
+    text-decoration: underline;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    
+    transition: all 0.10s ease-in-out;
 }
 
 

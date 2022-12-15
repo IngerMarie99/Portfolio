@@ -202,3 +202,5 @@ if (urlString === undefined) { //Forhindrer at den kaller på alle funksjoner ov
 }
 
 
+
+

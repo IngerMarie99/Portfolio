@@ -216,7 +216,30 @@ nav, ul {
 
 }
 
+/* Take me to top button*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    background-color: var(--accentDark); /* Set a background color */
+    color: var(--white); /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 7.5px 15px;
+    border-radius: 3px; /* Rounded corners */
+    border: 1px solid var(--accentDark);
+    font-size: 18px; /* Increase font size */
+    transition: all 0.10s ease-in-out;
+  }
+  
+#myBtn:hover {
+    background-color: var(--white); /* Add a dark-grey background on hover */
+    color: var(--accentDark);
+    border: 1px solid var(--accentDark);  }
 
+
+    
 #main h1 {
     text-align: center;
     padding-bottom: 45px;
