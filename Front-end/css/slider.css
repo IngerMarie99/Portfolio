@@ -28,11 +28,17 @@
  /* width: 75%;*/
   position: relative;
   margin: 0 var(--largeMarginsLeftRight-D);
+  max-height: 500px;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+}
+
+.mySlides img {
+  max-height:500px;
+  object-fit: contain;
 }
 
 /* Next & previous buttons */

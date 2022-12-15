@@ -56,24 +56,10 @@ const querySingleProject = `
     visual_identity,
     mood_board,
     
-    logo_heading,
-    logo_text,
-    "logo_file": logo_file.asset->url,
-
-    colors_heading,
-    colors_about,
-    "colors_image": colors_image.asset->url,
-
-    icons_heading,
-    icons_about,
-    "icons_image": icons_image.asset->url,
-
+    logo,
+    colors,
     icons,
-
-    typography_heading,
-    typography_about,
-    "typography_image": typography_image.asset->url,
-    
+    typography,
     pattern,
 
     wire_frames,
@@ -118,57 +104,6 @@ async function getProject() {
         const galleryAbout = document.getElementById('gallery-about');
         galleryAbout.textContent = result[0].gallery_about;
 
-        // LOGO
-        const logoHeading = document.getElementById('logo-heading');
-        logoHeading.textContent = result[0].logo_heading;
-
-        const logoText = document.getElementById('logo-text');
-        if(result[0].logo_text) {
-            logoText.textContent = result[0].logo_text;
-        }
-        const logoFile = document.querySelector('.logo-file');
-        if(result[0].logo_file) {
-            logoFile.setAttribute('src', result[0].logo_file);
-        }
-       
-        // COLORS
-        const colorsHeading = document.getElementById('colors-heading');
-        colorsHeading.textContent = result[0].colors_heading;
-
-        const colorsAbout = document.getElementById('colors-about');
-        colorsAbout.textContent = result[0].colors_about;
-
-        const colorsImage = document.querySelector('.colors-image');
-        if(result[0].colors_image) {
-            colorsImage.setAttribute('src',result[0].colors_image);
-        }
-
-        // ICONS
-        const iconsHeading = document.getElementById('icons-heading');
-        iconsHeading.textContent = result[0].icons_heading;
-
-        const iconsAbout = document.getElementById('icons-about');
-        iconsAbout.textContent = result[0].icons_about;
-
-        const iconsImage = document.querySelector('.icons-image');
-        if(result[0].icons_image) {
-            iconsImage.setAttribute('src',result[0].icons_image);
-        }
-               
-        // TYPOGRAPHY
-        const typographyHeading = document.getElementById('typography-heading');
-        if(result[0].typography_heading) {
-            typographyHeading.textContent = result[0].typography_heading;
-        }
-        const typographyAbout = document.getElementById('typography-about');
-        if(result[0].typography_about) {
-            typographyAbout.textContent = result[0].typography_about;
-        }
-        const typographyImage = document.querySelector('.typography-image');
-        if(result[0].typography_image) {
-            typographyImage.setAttribute('src',result[0].typography_image);
-        }
-
 
         const elements = [
             {'key': 'introduction'},
@@ -177,13 +112,17 @@ async function getProject() {
             {'key': 'issue'},
             {'key': 'concept'},
             {'key': 'about_the_name', 'container': 'name'},
-            {'key': 'visual_identity', 'container': 'visual-identity'},
-            {'key': 'pattern'},
             {'key': 'project_details', 'container': 'project-details'},
             {'key': 'target_audience', 'container': 'target-audience'},
             {'key': 'competitive_analysis', 'container': 'competitive-analysis'},
             {'key': 'persona'},
+            {'key': 'site_map', 'container': 'site-map'},
+            {'key': 'visual_identity', 'container': 'visual-identity'},
+            {'key': 'logo'},
+            {'key': 'colors'},
             {'key': 'icons'},
+            {'key': 'typography'},
+            {'key': 'pattern'},
             {'key': 'wire_frames', 'container': 'wire-frames'},
             {'key': 'process'},
             {'key': 'results'},

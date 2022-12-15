@@ -136,7 +136,7 @@ export default {
             type:'blockContent',
         },
 
-        // VISUAL IDENTITY
+        // MOOD BOARD
         {
             name:'mood_board',
             title:'Mood board',
@@ -146,79 +146,30 @@ export default {
         
         // PROJECT LOGO
         {
-            name:'logo_heading',
-            title:'Logo heading',
-            type:'string',
+            name:'logo',
+            title:'Logo',
+            type:'blockContent',
         },
-        {
-            name:'logo_text',
-            title:'About the logo',
-            type:'string',
-        },
-        {
-            name:'logo_file',
-            title:'Logo file',
-            type:'image',
-        },
-
 
         // COLORS
         {
-            name:'colors_heading',
-            title:'Colors heading',
-            type:'string',
-        },
-        {
-            name:'colors_about',
-            title:'About the colors',
-            type:'string',
-        },
-        {
-            name:'colors_image',
-            title:'Colors image',
-            type:'image',
+            name:'colors',
+            title:'Colors',
+            type:'blockContent',
         },
 
-        // ICONS
+         // ICONS
         {
-            name:'icons_heading',
-            title:'Icons heading',
-            type:'string',
-        },
-        {
-            name:'icons_about',
-            title:'About the icons',
-            type:'string',
-        },
-        {
-            name:'icons_image',
-            title:'Icons image',
-            type:'image',
-        },
-
-         // ICONS 2
-         {
             name:'icons',
             title:'Icons',
             type:'blockContent',
         },
-
-
+         
         // TYPOGRAPHY
         {
-            name:'typography_heading',
-            title:'Typography heading',
-            type:'string',
-        },
-        {
-            name:'typography_about',
-            title:'About the typography',
-            type:'string',
-        },
-        {
-            name:'typography_image',
-            title:'Typography image',
-            type:'image',
+            name:'typography',
+            title:'Typography',
+            type:'blockContent',
         },
         // PATTERN
         {
