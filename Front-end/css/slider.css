@@ -31,6 +31,26 @@
   max-height: 500px;
 }
 
+@media screen and (max-width: 480px) {
+  .sliderColumnText {
+    margin: 0 var(--largeMarginsLeftRight-M);
+  }
+  .slideshow-container {
+    margin: 0 var(--largeMarginsLeftRight-M);
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+  .sliderColumnText {
+    margin: 0 var(--largeMarginsLeftRight-T);
+  }
+  .slideshow-container {
+    margin: 0 var(--largeMarginsLeftRight-T);
+  }
+}
+
+
+
 /* Hide the images by default */
 .mySlides {
   display: none;
