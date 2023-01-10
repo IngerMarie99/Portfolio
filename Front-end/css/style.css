@@ -130,6 +130,50 @@ nav, ul {
     height: 100vh;
     padding: 270px var(--marginsLeftRight-D);
     transform: translateY(-135px);
+    animation: change 25s infinite ease-in-out;
+}
+
+@keyframes change{
+    0%
+    {
+        background-image: url('../assets/Images/Hero1.png');
+    }
+    15%
+    {
+        background-image: url('../assets/Images/Hero1.png');
+    }
+    
+    25%
+    {
+        background-image: url('../assets/Images/Hero2.png');
+    }
+    40%
+    {
+        background-image: url('../assets/Images/Hero2.png');
+    }
+    
+    50%
+    {
+        background-image: url('../assets/Images/Hero3.png');
+    }
+    65%
+    {
+        background-image: url('../assets/Images/Hero3.png');
+    }
+    
+    75%
+    {
+        background-image: url('../assets/Images/Hero4.png');
+    }
+    90%
+    {
+        background-image: url('../assets/Images/Hero4.png');
+    }
+    
+    100%
+    {
+        background-image: url('../assets/Images/Hero1.png');
+    }
 }
 
 .hero-logo {
