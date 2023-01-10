@@ -121,7 +121,6 @@ export function handleParagraphs(blockContent, container) {
                                 let childElement = document.createElement('a');
                                 childElement.textContent = child.text;
                                 childElement.setAttribute('href', getHref(child.marks[0], p.markDefs));
-                                childElement.classList.add('link');
                                 pElement.append(childElement);
                             } else {
                                 pElement.append(child.text);

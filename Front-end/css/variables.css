@@ -47,10 +47,6 @@ strong {
     font-weight: 400;
 }
 
-.link {
-    color: var(--accentDark);
-}
-
 h1 {
     font-family: var(--identityFont);
     font-size: 3.157rem;
