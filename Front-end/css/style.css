@@ -180,43 +180,43 @@ nav, ul {
     @keyframes change{
         0%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-10.png');
+            background-image: url('../assets/Images/gunderhuset-heros-10.png');
         }
         15%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-10.png');
+            background-image: url('../assets/Images/gunderhuset-heros-10.png');
         }
         
         25%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-11.png');
+            background-image: url('../assets/Images/gunderhuset-heros-11.png');
         }
         40%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-11.png');
+            background-image: url('../assets/Images/gunderhuset-heros-11.png');
         }
         
         50%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-12.png');
+            background-image: url('../assets/Images/gunderhuset-heros-12.png');
         }
         65%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-12.png');
+            background-image: url('../assets/Images/gunderhuset-heros-12.png');
         }
         
         75%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-13.png');
+            background-image: url('../assets/Images/gunderhuset-heros-13.png');
         }
         90%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-13.png');
+            background-image: url('../assets/Images/gunderhuset-heros-13.png');
         }
         
         100%
         {
-            background-image: url('../assets/Images/gunderhuset-heros-mobile-10.png');
+            background-image: url('../assets/Images/gunderhuset-heros-10.png');
         }
     }
 }
