@@ -178,6 +178,7 @@ nav, ul {
     }
 }
 
+
 @media screen and (max-width: 480px) {
     @keyframes change{
         0%
@@ -232,6 +233,8 @@ nav, ul {
     padding: 180px var(--marginsLeftRight-D);
 }
 
+
+
 .hero-logo {
     width: 555px;
 }
@@ -285,6 +288,11 @@ nav, ul {
         height: 100vh;
         padding: 320px var(--marginsLeftRight-M);
        transform: translateY(-200px);
+    }
+
+    .hero-new {
+        height: 90vh;
+        background-color: var(--black);
     }
     .hero-logo {
         width: 300px;

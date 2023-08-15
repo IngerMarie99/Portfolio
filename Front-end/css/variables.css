@@ -54,6 +54,21 @@ strong {
     text-align: center;
 }
 
+@media screen and (max-width: 480px) {
+    .hero-text {
+        color: var(--white);
+        font-size: 40px;
+        font-family: var(--identityFont);
+        text-align: center;
+    }
+    .roleText {
+        font-size: 20px;
+        color: var(--accentLight);
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
 .link {
     color: var(--accentDark);
 }
