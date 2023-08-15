@@ -24,15 +24,29 @@ html,body {
 }
 
 a {
-    color: var(--white);
+    color: var(--black);
     text-decoration: none;
 }
 
 a:hover {
+    color: var(--accentDark);
+}
+
+.a-dark {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.a-dark:hover {
     color: var(--accentLight);
 }
 
 .underlineMenu {
+    border-bottom: 2px solid var(--accentDark);
+    color: var(--accentDark);
+}
+
+.underlineMenu-dark {
     border-bottom: 2px solid var(--accentLight);
     color: var(--accentLight);
 }
@@ -81,7 +95,7 @@ nav, ul {
 }
 
 .overlay-menu {
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
     background-color: var(--white);
     z-index: 10;
