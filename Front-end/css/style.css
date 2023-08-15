@@ -95,7 +95,7 @@ nav, ul {
 }
 
 .overlay-menu {
-    height: 100vh;
+    height: 90vh;
     width: 100vw;
     background-color: var(--white);
     z-index: 10;
@@ -308,6 +308,11 @@ nav, ul {
     .hero-new {
         height: 90vh;
         background-color: var(--black);
+        padding: 130px var(--marginsLeftRight-M);
+    }
+    .flexArrow {
+        padding-top: 170px;
+
     }
     .hero-logo {
         width: 300px;

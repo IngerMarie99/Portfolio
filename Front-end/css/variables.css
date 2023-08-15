@@ -155,7 +155,7 @@ button:hover {
     }
     .roleText {
         font-size: 0.667rem;
-        color: var(--accentDark);
+        color: var(--accentLight);
         font-weight: 400;
     }
     
