@@ -41,10 +41,17 @@ strong {
     font-weight: 400;
 }
 
+.hero-text {
+    color: var(--white);
+    font-size: 70px;
+    font-family: var(--identityFont);
+    text-align: center;
+}
 .roleText {
     font-size: 1.333 rem;
-    color: var(--accentDark);
+    color: var(--accentLight);
     font-weight: 400;
+    text-align: center;
 }
 
 .link {

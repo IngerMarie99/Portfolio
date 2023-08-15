@@ -24,27 +24,29 @@ html,body {
 }
 
 a {
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--accentDark);
+    color: var(--accentLight);
 }
 
 .underlineMenu {
-    border-bottom: 2px solid var(--accentDark);
-    color: var(--accentDark);
+    border-bottom: 2px solid var(--accentLight);
+    color: var(--accentLight);
 }
 
 header {
+    background-color: var(--black);
     position: relative;
     font-size: 20px;
     text-align: right;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    margin: 30px var(--marginsLeftRight-D);
+    width: 100%;
+    padding: 60px var(--marginsLeftRight-D);
     z-index: 5;
     align-items: center;
     height: 75px;
@@ -221,6 +223,15 @@ nav, ul {
     }
 }
 
+.hero-new {
+    background-color: var(--black);
+    display:flex;
+    flex-flow: column;
+    width: 100vw;
+    height: 90vh;
+    padding: 180px var(--marginsLeftRight-D);
+}
+
 .hero-logo {
     width: 555px;
 }
@@ -234,7 +245,7 @@ nav, ul {
 
 .flexArrow {
     width: 100%;
-    padding-top: 300px;
+    padding-top: 230px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
