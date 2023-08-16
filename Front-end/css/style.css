@@ -467,7 +467,7 @@ nav, ul {
 }
 
 .project-page-top-img {
-    height: 80vh;
+    /*height: 80vh;*/
     width: 100vw;
     object-fit: cover;
 }
