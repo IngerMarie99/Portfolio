@@ -463,12 +463,11 @@ nav, ul {
 
 .project-page h1 {
     text-align: center;
-    margin: var(--marginsLeftRight-D);
 
 }
 
 .project-page-top-img {
-    /*height: 80vh;*/
+    height: 80vh;
     width: 100vw;
     object-fit: cover;
 }
@@ -514,6 +513,10 @@ nav, ul {
     }
     .column-reverse {
         flex-direction: column-reverse;
+    }
+    .project-page-top-img {
+        width: 100vw;
+        object-fit: cover;
     }
 }
 
