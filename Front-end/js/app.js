@@ -131,6 +131,8 @@ async function getProject() {
        
        handleGallery(result[0].persona_gallery,'#persona-gallery')
        handleGallery(result[0].wire_frames_gallery,'#wire-frames-gallery')
+       handleGallery(result[0].results_gallery,'#results-gallery')
+
 
 
    
