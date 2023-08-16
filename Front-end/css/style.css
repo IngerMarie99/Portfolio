@@ -472,6 +472,10 @@ nav, ul {
     object-fit: cover;
 }
 
+.project-title {
+    width: auto;
+}
+
 
 .flex-column-section {
     display: flex;
@@ -515,8 +519,14 @@ nav, ul {
         flex-direction: column-reverse;
     }
     .project-page-top-img {
+        height: 60vh;
         width: 100vw;
         object-fit: cover;
+    }
+
+
+    .project-title {
+        padding: 20px 0px;
     }
 }
 
