@@ -463,6 +463,7 @@ nav, ul {
 
 .project-page h1 {
     text-align: center;
+    margin: var(--marginsLeftRight-D);
 
 }
 
