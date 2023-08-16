@@ -246,6 +246,10 @@ nav, ul {
     width: 100vw;
     height: 90vh;
     padding: 180px var(--marginsLeftRight-D);
+    background-image: url('../assets/Images/Plante\ desktop-2.gif') ;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 
@@ -309,9 +313,11 @@ nav, ul {
         height: 90vh;
         background-color: var(--black);
         padding: 130px var(--marginsLeftRight-M);
+        background-image: url('../assets/Images/Plante\ mobil.gif');
+        background-position: top;
     }
     .flexArrow {
-        padding-top: 170px;
+        padding-top: 200px;
 
     }
     .hero-logo {
