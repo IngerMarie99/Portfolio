@@ -113,7 +113,7 @@ async function getProject() {
             {'key': 'pattern'},
             {'key': 'wire_frames', 'container': 'wire-frames'},
             {'key': 'process'},
-            {'key': 'results'},
+            {'key': 'results', 'container': 'results-gallery'},
         ]
                 
         elements.forEach(block => {
