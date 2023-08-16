@@ -171,17 +171,23 @@ export default {
             type: 'array',
             of: [{type:'image'}],
         },
-
+        // PROCESS
         {
             name:'process',
             title:'Process',
             type:'blockContent',
         },
-        
+         // RESULTS
         {
             name:'results',
             title:'Results',
             type:'blockContent',
+        },
+        {
+            name: 'results_gallery',
+            title: 'Results gallery',
+            type: 'array',
+            of: [{type:'image'}],
         },
         
     ]
