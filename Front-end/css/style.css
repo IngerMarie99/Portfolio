@@ -519,7 +519,7 @@ nav, ul {
         flex-direction: column-reverse;
     }
     .project-page-top-img {
-        height: 60vh;
+        height: 50vh;
         width: 100vw;
         object-fit: cover;
     }
