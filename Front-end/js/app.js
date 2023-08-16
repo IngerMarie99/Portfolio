@@ -60,6 +60,7 @@ const querySingleProject = `
     process,
 
     results,
+    results_gallery[],
 }
 `;
 
