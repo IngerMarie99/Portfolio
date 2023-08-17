@@ -259,8 +259,6 @@ nav, ul {
 }
 
 
-
-
 .role-text-position {
     padding-left: 375px;
 }
@@ -751,7 +749,6 @@ nav, ul {
         font-size: 40px;
         color: var(--white);
         font-family: var(--identityFont);
-        margin: var(--marginsLeftRight-M);
     }
     
     .fun-fact-card {
