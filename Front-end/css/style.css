@@ -709,6 +709,29 @@ nav, ul {
     }
 }
 
+.fun-fact-hero {
+    height: 50vh;
+    width: 100%;
+    background-color: var(--black);
+    text-align: center;
+    padding-top: 200px;
+    margin-bottom: 100px;
+
+
+}
+
+.fun-fact-hero span {
+    margin: 0 auto;
+    font-size: 42px;
+    color: var(--white);
+    font-family: var(--identityFont);
+}
+
+.fun-fact-card {
+    margin: 100px var(--largeMarginsLeftRight-D);
+
+}
+
 
 
 
