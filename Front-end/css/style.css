@@ -732,8 +732,31 @@ nav, ul {
 
 }
 
+@media screen and (max-width: 480px) {
+    .fun-fact-hero {
+        height: 50vh;
+        width: 100%;
+        background-color: var(--black);
+        text-align: center;
+        padding-top: 150px;
+        margin-bottom: 100px;
+    
+    }
+    
+    .fun-fact-hero span {
+        margin: 0 auto;
+        font-size: 42px;
+        color: var(--white);
+        font-family: var(--identityFont);
+        margin: var(--marginsLeftRight-M);
+    }
+    
+    .fun-fact-card {
+        margin: 100px var(--largeMarginsLeftRight-M);
+    
+    }
 
-
+}
 
 footer {
     text-align: center;
