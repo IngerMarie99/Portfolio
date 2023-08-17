@@ -729,7 +729,10 @@ nav, ul {
 
 .fun-fact-card {
     margin: 100px var(--largeMarginsLeftRight-D);
+}
 
+.fun-fact-card p {
+    line-height: 170%;
 }
 
 @media screen and (max-width: 480px) {
