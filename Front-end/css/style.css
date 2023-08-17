@@ -738,14 +738,14 @@ nav, ul {
         width: 100%;
         background-color: var(--black);
         text-align: center;
-        padding-top: 150px;
+        padding-top: 100px;
         margin-bottom: 100px;
     
     }
     
     .fun-fact-hero span {
         margin: 0 auto;
-        font-size: 42px;
+        font-size: 40px;
         color: var(--white);
         font-family: var(--identityFont);
         margin: var(--marginsLeftRight-M);
