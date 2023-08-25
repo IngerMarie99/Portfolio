@@ -741,7 +741,6 @@ nav, ul {
         text-align: center;
         padding-top: 100px;
         margin-bottom: 100px;
-    
     }
     
     .fun-fact-hero span {
@@ -753,9 +752,7 @@ nav, ul {
     
     .fun-fact-card {
         margin: 100px var(--largeMarginsLeftRight-M);
-    
     }
-
 }
 
 footer {

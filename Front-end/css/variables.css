@@ -103,8 +103,8 @@ button {
     color: var(--white);
     cursor: pointer;
 
-    background-color: var(--accentDark);
-    border: 1px solid var(--accentDark);
+    background-color: var(--accentLight);
+    border: 1px solid var(--accentLight);
     border-radius: 3px;
     
     padding: 7.5px 15px;
@@ -113,9 +113,9 @@ button {
 
 button:hover {
     background-color: var(--white);
-    border: 1px solid var(--accentDark);
+    border: 1px solid var(--accentLight);
     border-radius: 3px;
-    color: var(--accentDark);
+    color: var(--accentLight);
 }
 
 .secondaryButton {
