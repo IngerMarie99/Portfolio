@@ -87,6 +87,7 @@ nav, ul {
     list-style: none;
     text-align: right;
     gap: 30px;
+    align-items: center;
 
 }
 
