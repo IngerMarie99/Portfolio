@@ -32,12 +32,16 @@ export default {
             title: 'Tools',
             type: 'array',
             of: [{type: 'reference', to: {type: 'tools'}}],
+        },        
+        {
+            name:'short_intro', 
+            title: 'Short intro', //dette er tittel inne i skjemaet
+            type: 'blockContent', //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
         },
-
         {
             name:'introduction', 
-            title: 'Introduction', //dette er tittel inne i skjemaet
-            type: 'blockContent' //dette er hvilken type innhold dette er. https://www.sanity.io/docs/schema-types 
+            title: 'Introduction', 
+            type: 'blockContent',
         },
 
         {
