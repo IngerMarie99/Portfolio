@@ -184,6 +184,9 @@ async function getAllProjects() {
         const titleElement = document.createElement('h3');
         titleElement.textContent = project.project_name;
 
+        const projectIntro = document.createElement('p');
+        projectIntro.textContent=
+
         projectCard.append(mainImg);
         projectCard.append(titleElement);
 
