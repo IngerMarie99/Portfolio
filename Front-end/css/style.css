@@ -459,8 +459,12 @@ nav, ul {
     
     .projectCard h3 {
         text-align: left;
-        margin-top:10px
+        margin-top: 10px;
+    }
 
+    .projectCard p {
+        text-align: left;
+        margin-top: 10px;
     }
 }
 

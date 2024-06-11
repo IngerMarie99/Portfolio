@@ -17,6 +17,7 @@ const queryAllProjects = `
     slug,
     "main_image": main_image.asset->url,
     "second_image":second_image.asset->url,
+    short_intro,
     }
     `;
 const querySingleProject = `
@@ -171,8 +172,6 @@ async function getAllProjects() {
 
     result.forEach(project => {
 
-        
-
         const projectCard = document.createElement('a');
         projectCard.classList.add('projectCard');
         projectCard.setAttribute('href', `/projects/?${project.slug.current}`);
@@ -180,15 +179,15 @@ async function getAllProjects() {
         const mainImg = document.createElement('img');
         mainImg.setAttribute('src', project.main_image);
 
-
         const titleElement = document.createElement('h3');
         titleElement.textContent = project.project_name;
 
         const projectIntro = document.createElement('p');
-        projectIntro.textContent=
+        projectIntro.textContent= project.short_intro;
 
         projectCard.append(mainImg);
         projectCard.append(titleElement);
+        projectCard.append(projectIntro);
 
         
 
